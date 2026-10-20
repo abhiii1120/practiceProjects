@@ -1,7 +1,9 @@
-import express from 'express';
+import express from "express";
 
-let app = express();
+export default function createApp() {
+  let app = express();
 
-app.use(express.json());
+  app.use(express.json());
 
-export default app;
+  return app
+}
