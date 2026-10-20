@@ -5,7 +5,7 @@ import NotesDao from "./dao/notes.dao.js";
 import { createNotesController } from "./controllers/notes.controller.js";
 import { createNotesRouter } from "./routes/notes.routes.js";
 
-export default function createApp({notesService}) {
+export default function createApp({notesService} = {}) {
   let app = express();
 
   app.use(express.json());
