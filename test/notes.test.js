@@ -9,9 +9,8 @@ import {
     afterAll
 } from '@jest/globals';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { createApp } from '../app/app.js';
-import Note from '../app/models/note.model.js';
-
+import createApp from '../app/app.js';
+import Note from '../app/models/node.model.js';
 /**
  * Notes API integration tests running against an in-memory MongoDB instance.
  */

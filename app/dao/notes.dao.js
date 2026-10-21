@@ -1,7 +1,7 @@
 import Note from "../models/node.model.js";
 
 class NotesDao {
-  async createNote(data) {
+  async create(data) {
     return Note.create(data);
   }
 
