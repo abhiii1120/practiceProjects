@@ -1,13 +1,28 @@
-import { Router } from 'express';
+import { Router } from "express";
 
+/**
+ * Creates and configures the Express Router for notes endpoints.
+ *
+ * @param {Object} notesController - Controller instance with route handler methods
+ * @returns {import('express').Router} Configured router
+ */
 export const createNotesRouter = (notesController) => {
-    const router = Router();
+  const router = Router();
 
-    router.post('/', notesController.createNote);
-    router.get('/', notesController.getNotes);
-    router.get('/:id', notesController.getNoteById);
-    router.put('/:id', notesController.updateNote);
-    router.delete('/:id', notesController.deleteNote);
+  // POST /api/notes - Create a new note
+  router.post("/", notesController.createNote);
 
-    return router;
+  // GET /api/notes - Fetch all notes
+  router.get("/", notesController.getNotes);
+
+  // GET /api/notes/:id - Fetch a single note by ObjectId
+  router.get("/:id", notesController.getNoteById);
+
+  // PUT /api/notes/:id - Update an existing note by ObjectId
+  router.put("/:id", notesController.updateNote);
+
+  // DELETE /api/notes/:id - Remove a note by ObjectId
+  router.delete("/:id", notesController.deleteNote);
+
+  return router;
 };
